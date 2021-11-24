@@ -234,7 +234,7 @@ function parseDirective(state, src, pos, max, allowSpaceBetween) {
         dests = [ [ 'link', ref.href ], [ 'string', ref.title ] ];
         pos = destsEnd + 1;
       }
-    } else {
+    } else if(content) {
       const ref = state.env.references[normalizeReference(content)];
       if (ref) {
         dests = [ [ 'link', ref.href ], [ 'string', ref.title ] ];
